@@ -36,6 +36,7 @@ typedef void (*funTocall)(void);
 class noDelay{
 	public:
 	noDelay(void);
+	noDelay(bool isenabled);
 	noDelay(unsigned long dtime);
 	noDelay(unsigned long dtime,bool isenabled);
 	noDelay(unsigned long dtime, funTocall funcall);
@@ -43,6 +44,9 @@ class noDelay{
 	
 	
 	void setdelay(unsigned long);
+	void setdelay(unsigned long);
+	void setFunction(funTocall funcall);
+	void isEnabled(bool is_enabled);
 	bool update();
 	void fupdate(); //Deprecated 
 	void start();
