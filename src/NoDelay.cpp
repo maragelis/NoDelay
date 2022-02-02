@@ -43,6 +43,12 @@ noDelay::noDelay(void)
 	preMills = 0;
 	setdelay(0);
 }
+noDelay::noDelay(bool is_enabled)
+{
+	isenabled = is_enabled;
+	preMills = 0;
+	setdelay(0);
+}
 noDelay::noDelay(unsigned long dtime)
 {
 	preMills = 0;
@@ -146,6 +152,17 @@ bool noDelay::update()
 	else
 		return false;
 		
+}
+
+void noDelay::setFunction(funTocall funcall)
+{
+	_funcall = funcall;
+	use_function = true;
+}
+
+void noDelay::isEnabled(bool is_enabled);
+{
+	isenabled = is_enabled;
 }
 
 /**************************************************************************/
